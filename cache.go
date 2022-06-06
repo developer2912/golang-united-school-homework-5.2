@@ -45,7 +45,7 @@ func (c Cache) Keys() []string {
 	return keys
 }
 
-func (c Cache) PutTill(key, value string, deadline time.Time) {
+func (c *Cache) PutTill(key, value string, deadline time.Time) {
 	c.store[key] = data{
 		value:     value,
 		expiredAt: deadline,
